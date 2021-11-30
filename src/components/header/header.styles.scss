@@ -1,0 +1,21 @@
+@import "variables";
+
+.header {
+    color : $dark-grayish-blue
+    display: grid;
+    grid-template-columns: min-content min-content 50%;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+::after {
+    content: " ";
+    background-color: $dark-grayish-blue;
+    height: 1px;
+    width: 100%
+}
