@@ -1,7 +1,7 @@
-@import "variables";
+@import "../../sass/variables";
 
 .header {
-    color : $dark-grayish-blue
+    color : $dark-grayish-blue;
     display: grid;
     grid-template-columns: min-content min-content 50%;
     justify-content: flex-end;

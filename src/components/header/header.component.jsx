@@ -8,11 +8,15 @@ import './header.styles.scss';
 const Header = () => {
    
     const CartIcon = () => {
-        <IconCart className="shopping-icon" />
+        return (
+            <IconCart className="shopping-icon" />
+        )
     }
 
     const ProfileImage = () => {
-        <img src="../../assets/image-avatar.png" alt="profile" name="profile image" />
+        return (
+            <img src="../../assets/image-avatar.png" alt="profile" name="profile image" />
+        )
     }
 
     return (
