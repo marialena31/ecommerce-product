@@ -1,6 +1,6 @@
 @import "../../sass/variables";
 
- .custom__btn {
+.custom__btn {
     color: $white;
     font-weight: $font-weight-strong;
     text-align: center;
@@ -13,6 +13,34 @@
     height: 50px;
     cursor: pointer;
     transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        width: 100%;
+    }
+    
+    &__icon {
+        height: 16px;
+        width: auto;
+    }
+
+    &__title {
+        margin-left: 1rem;
+    }
+
+    &:hover,
+    &:active {
+        opacity: 0.7;
+        box-shadow: 10px 10px 20px $primary-color;
+    }
 
     &:active {
         transform: translateY(0.2rem);

@@ -2,9 +2,12 @@ import React from "react";
 
 import './custom-button.styles.scss'
 
-const CustomButton = ({title}) => {
+const CustomButton = ({title, img}) => {
     return (
-        <button className="cart-dropdown__btn custom__btn">{title}</button>
+        <button className="custom__btn">
+            {img ? <img src={img} className="custom__btn__icon" alt={title}/> : null}
+            <span className="custom__btn__title">{title}</span>
+        </button>
     )
 }
 
