@@ -23,9 +23,9 @@ const ProductPage = () => {
         <div className="product-page">
             <div className="images-box">
                 <div className="images-box__main">
-                    <img src={IconPrevious} className="images-box__main__btn__prev"/>
+                    <img src={IconPrevious} className="images-box__main__btn__prev" alt="previous product"/>
                     <img className="images-box__main__img" src={imgProduct1} alt="product" />
-                    <img src={IconNext} className="images-box__main__btn__next"/>
+                    <img src={IconNext} className="images-box__main__btn__next" alt="next product"/>
                 </div>
                 <div className="images-box__mini">
                     <div className="images-box__mini__item">
@@ -60,7 +60,7 @@ const ProductPage = () => {
                         <button className="product-details__actions__qty__plus btn"><IconPlus/></button>
                     </div>
                     <button className="product-details__addToCart custom__btn">
-                        <img src={IconCartWhite} className="product-details__addToCart__icon"/>
+                        <img src={IconCartWhite} className="product-details__addToCart__icon" alt="add to cart"/>
                         <span className="product-details__addToCart__title">Add to cart</span>
                     </button>
                 </div>
