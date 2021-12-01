@@ -4,11 +4,11 @@ import { ReactComponent as IconMinus } from '../../assets/icon-minus.svg'
 import { ReactComponent as IconPlus } from '../../assets/icon-plus.svg'
 import imgProduct1 from '../../assets/image-product-1.jpg';
 import imgProduct1Thumb from '../../assets/image-product-1-thumbnail.jpg';
-import imgProduct2 from '../../assets/image-product-2.jpg';
+// import imgProduct2 from '../../assets/image-product-2.jpg';
 import imgProduct2Thumb from '../../assets/image-product-2-thumbnail.jpg';
-import imgProduct3 from '../../assets/image-product-3.jpg';
+// import imgProduct3 from '../../assets/image-product-3.jpg';
 import imgProduct3Thumb from '../../assets/image-product-3-thumbnail.jpg';
-import imgProduct4 from '../../assets/image-product-4.jpg';
+// import imgProduct4 from '../../assets/image-product-4.jpg';
 import imgProduct4Thumb from '../../assets/image-product-4-thumbnail.jpg';
 import product from "../../data/product";
 
