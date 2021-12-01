@@ -1,0 +1,115 @@
+@import "../../sass/variables";
+
+.images-box {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &__main {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            z-index: 1;
+
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 1 / 2;
+                height: 30rem;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                grid-column: 1 / -1;
+                height: 20rem;
+                width: 100vw;
+                border-radius: 0;
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+        }
+
+        &__btn__prev, &__btn__next {
+            position: absolute;
+            background-color: $white;
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            padding: 1rem;
+            z-index: 2;
+            display: none;
+            cursor: pointer;
+
+            @media only screen and (max-width: $bp-medium) {
+                display: inline-block;
+            }
+        }
+
+        &__btn__prev {
+            left: 1.5rem;
+
+            @media only screen and (max-width: $bp-small) {
+                left: 0.5rem;
+            }
+        }
+
+        &__btn__next {
+            right: 1.5rem;
+
+            @media only screen and (max-width: $bp-small) {
+                right: 0.5rem;
+            }
+        }
+    }
+
+    &__mini {
+        display: flex;
+        justify-content: space-between;
+        
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
+
+        &__item {
+            position: relative;
+            width: 20%;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s;
+
+            &:active {
+                border: 3px solid $primary-color;
+            }
+
+            &__img {
+                height: 100%;
+                width: 100%;
+
+                &:hover,
+                &:active {
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+}

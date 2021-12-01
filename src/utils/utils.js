@@ -7,3 +7,7 @@ export const getBaseUrlMedia = () => {
 export const getFileUrlMedia = fileName => {
     return getBaseUrlMedia() + '/' + fileName
 }
+
+export const getRandomKey = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}

@@ -2,16 +2,9 @@ import React from "react";
 import  IconCartWhite from '../../assets/icon-cart-white.svg'
 import { ReactComponent as IconMinus } from '../../assets/icon-minus.svg'
 import { ReactComponent as IconPlus } from '../../assets/icon-plus.svg'
-import  IconNext from '../../assets/icon-next.svg'
-import IconPrevious from '../../assets/icon-previous.svg'
-import imgProduct1 from '../../assets/image-product-1.jpg';
-import imgProduct1Thumb from '../../assets/image-product-1-thumbnail.jpg';
-// import imgProduct2 from '../../assets/image-product-2.jpg';
-import imgProduct2Thumb from '../../assets/image-product-2-thumbnail.jpg';
-// import imgProduct3 from '../../assets/image-product-3.jpg';
-import imgProduct3Thumb from '../../assets/image-product-3-thumbnail.jpg';
-// import imgProduct4 from '../../assets/image-product-4.jpg';
-import imgProduct4Thumb from '../../assets/image-product-4-thumbnail.jpg';
+
+import ProductImages from "../product-images/product-images.component";
+
 import product from "../../data/product";
 
 import '../custom-button/custom-button.styles.scss'
@@ -21,27 +14,7 @@ const ProductPage = () => {
     const quantity = 3;
     return (
         <div className="product-page">
-            <div className="images-box">
-                <div className="images-box__main">
-                    <img src={IconPrevious} className="images-box__main__btn__prev" alt="previous product"/>
-                    <img className="images-box__main__img" src={imgProduct1} alt="product" />
-                    <img src={IconNext} className="images-box__main__btn__next" alt="next product"/>
-                </div>
-                <div className="images-box__mini">
-                    <div className="images-box__mini__item">
-                        <img className="images-box__mini__item__img" src={imgProduct1Thumb} alt="product" />
-                    </div>
-                    <div className="images-box__mini__item">
-                        <img className="images-box__mini__item__img" src={imgProduct2Thumb} alt="product" />
-                    </div>
-                    <div className="images-box__mini__item">
-                        <img className="images-box__mini__item__img" src={imgProduct3Thumb} alt="product" />
-                    </div>
-                    <div className="images-box__mini__item">
-                        <img className="images-box__mini__item__img" src={imgProduct4Thumb} alt="product" />
-                    </div>
-                </div>
-            </div>
+            <ProductImages/>
             <div className="product-details">
                 <div className="product-details__category">{product.category}</div>
                 <h1 className="product-details__name">{product.name}</h1>

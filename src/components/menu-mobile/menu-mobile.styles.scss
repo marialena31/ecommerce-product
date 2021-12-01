@@ -5,11 +5,11 @@
     &__open {
         display: none;
         position: relative;
-        cursor: pointer;
 
         @media only screen and (max-width: $bp-small) {
             display: inline-block;
             grid-row: 1 / 2;
+            cursor: pointer;
         }   
     }    
     
@@ -19,11 +19,11 @@
         top: 2rem;
         left: 2rem;
         z-index: 11;
-        cursor: pointer;
         transition: all 0.4s;
 
         @media only screen and (max-width: $bp-small) {
             display: inline-block;
+            cursor: pointer;
         }  
 
         &:active {

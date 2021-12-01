@@ -9,11 +9,9 @@ export const getProductMainThumbnailUrl = () => {
 }
 
 export const getAllProductThumbnailUrl = () => {
-    let medias = [getProductMainThumbnailUrl()]
-    for(const img in product.secondary_pictures) {
-        medias.push(getFileUrlMedia(img.thumbnail))
-    }
-    return medias
+    let medias = product.secondary_pictures.map(img => getFileUrlMedia(img.thumbnail));
+    medias.unshift(getProductMainThumbnailUrl());
+    return medias;
 }
 
 const product = {
