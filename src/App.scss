@@ -1,0 +1,7 @@
+@import "../src/sass/variables";
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr minmax(min-content,1440px) 1fr;
+    grid-template-rows: 6rem 2px calc(100vh - 6rem - 2px);
+}

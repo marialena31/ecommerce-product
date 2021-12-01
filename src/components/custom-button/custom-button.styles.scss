@@ -1,0 +1,13 @@
+@import "../../sass/variables";
+
+ .custom__btn {
+    color: $white;
+    font-weight: $font-weight-strong;
+    text-align: center;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}

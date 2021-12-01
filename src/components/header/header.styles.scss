@@ -1,21 +1,166 @@
 @import "../../sass/variables";
 
 .header {
-    color : $dark-grayish-blue;
+    grid-column: 2 / 3;
     display: grid;
-    grid-template-columns: min-content min-content 50%;
+    grid-template-columns: 10rem 138px 5rem 1fr calc(45% - 10rem) 10rem;
+    grid-template-rows: 6rem auto;
     justify-content: flex-end;
     align-items: center;
 
+    &__logo {
+        grid-column: 3 / 4;
+        justify-self: flex-end;
+        padding-left: 10rem;
+    }
+
     &__nav {
+        grid-column: 4 / 5;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        &__item {
+            text-decoration: none;
+            color: $dark-grayish-blue;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 2.5rem;
+
+            &::after {
+                content: " ";
+                background-color: $primary-color;
+                height: 4px;
+                visibility: hidden;
+                width: 100%;
+                margin-top: 2.5rem;
+            }
+
+            &:hover,
+            &:active {
+                color: $very-dark-blue;    
+                
+                &::after {
+                    visibility: visible;
+                    z-index: 1000;
+                }  
+            }
+        }
+    }
+
+    &__right-box {
+        position:relative;
+        grid-column: 5 / 6;
+        display: flex;
+        justify-self: flex-end;
+        align-items: center;
+    }
+
+    &__cart-icon {
+        padding-right: 3rem;
+        cursor: pointer;
+
+        &__cta {
+            position: relative;
+
+            span {
+                position: absolute;
+                top: -5px;
+                left: 10px;
+                height: 10px;
+                width: 15px;
+                padding: 2px;
+                font-size: 9px;
+                font-weight: $font-weight-strong;
+                color: $white;
+                background-color: $primary-color;
+                border-radius: 40%;
+                text-align: center;
+              }
+        }    
+    }
+
+    &__profile {
+        height: 40px;
+        cursor: pointer;
+        border: 2px solid transparent;    
+        border-radius: 50%;
+
+        &:hover,
+        &:active {
+            border: 2px solid $primary-color;    
+        }
     }
 }
 
-::after {
+.header::after {
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
     content: " ";
-    background-color: $dark-grayish-blue;
-    height: 1px;
+    background-color: $light-grayish-blue;
+    height: 2px;
     width: 100%
 }
+
+.cart-dropdown {
+    position: absolute;
+    top: 50px;
+    right: -60px;
+    z-index: 1000;
+    background-color: $white;
+    width: 320px;
+    height: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px $grayish-blue;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 40px auto;
+
+    &__header {
+        border-bottom: 2px solid $light-grayish-blue;
+        font-weight: $font-weight-strong;
+        text-align: left;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        font-weight: $font-weight-strong;
+        color: $dark-grayish-blue;
+        align-self: center;
+    }
+}
+
+.cart-item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        color: $dark-grayish-blue;
+        text-align: left;
+        line-height: 1.5rem;
+
+        &__price__total {
+            color: $very-dark-blue;
+            font-weight: $font-weight-strong;
+        }
+    }
+
+    &__delete-icon {
+        cursor: pointer;
+    }
+}
+
