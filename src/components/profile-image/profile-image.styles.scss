@@ -1,0 +1,13 @@
+@import "../../sass/variables";
+
+.profile {
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid transparent;    
+    border-radius: 50%;
+
+    &:hover,
+    &:active {
+        border: 2px solid $primary-color;    
+    }
+}

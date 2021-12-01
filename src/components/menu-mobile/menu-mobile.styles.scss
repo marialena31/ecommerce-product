@@ -1,0 +1,32 @@
+@import "../../sass/variables";
+
+.menu-mobile {
+
+    &__open {
+        position: relative;
+        cursor: pointer;
+
+        @media only screen and (max-width: $bp-small) {
+            display: inline-block;
+            grid-row: 1 / 2;
+        }   
+    }    
+    
+    &__close {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        z-index: 11;
+        display: none;
+        cursor: pointer;
+        transition: all 0.4s;
+
+        @media only screen and (max-width: $bp-small) {
+            display: inline-block;
+        }  
+
+        &:active {
+            transform: translateY(0.2rem);
+        }
+    }
+}

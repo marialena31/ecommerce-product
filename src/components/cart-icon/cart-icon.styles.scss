@@ -1,0 +1,31 @@
+@import "../../sass/variables";
+
+.cart-icon__cta {
+    padding-right: 3rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s;
+
+    @media only screen and (max-width: $bp-small) {
+        padding-right: 1.5rem;
+    }
+
+    &:active {
+        transform: translateY(0.2rem);
+    }
+
+    span {
+        position: absolute;
+        top: -5px;
+        left: 10px;
+        height: 10px;
+        width: 15px;
+        padding: 2px;
+        font-size: 9px;
+        font-weight: $font-weight-strong;
+        color: $white;
+        background-color: $primary-color;
+        border-radius: 40%;
+        text-align: center;
+    }    
+}
