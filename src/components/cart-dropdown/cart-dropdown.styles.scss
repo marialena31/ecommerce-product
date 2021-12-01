@@ -1,0 +1,38 @@
+@import "../../sass/variables";
+
+.cart-dropdown {
+    position: absolute;
+    top: 50px;
+    right: -60px;
+    z-index: 1000;
+    background-color: $white;
+    width: 320px;
+    height: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px $grayish-blue;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 40px auto;
+
+    @media only screen and (max-width: $bp-small) {
+        top: 4.1rem;
+        right: 0%;
+        width: 88vw;
+        margin: auto;
+    }
+
+    &__header {
+        border-bottom: 2px solid $light-grayish-blue;
+        font-weight: $font-weight-strong;
+        text-align: left;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        font-weight: $font-weight-strong;
+        color: $dark-grayish-blue;
+        align-self: center;
+    }
+}

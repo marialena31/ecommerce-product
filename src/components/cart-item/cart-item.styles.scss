@@ -1,0 +1,37 @@
+@import "../../sass/variables";
+
+.cart-item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        color: $dark-grayish-blue;
+        text-align: left;
+        line-height: 1.5rem;
+
+        &__price__total {
+            color: $very-dark-blue;
+            font-weight: $font-weight-strong;
+        }
+    }
+
+    &__delete-icon {
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &:active {
+            transform: translateY(0.2rem);
+        }
+    }
+}

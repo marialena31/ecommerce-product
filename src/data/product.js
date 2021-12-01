@@ -1,3 +1,21 @@
+import {getFileUrlMedia} from '../utils/utils'
+
+export const getProductMainImageUrl = () => {
+    return getFileUrlMedia(product.primary_picture.normal)
+}
+
+export const getProductMainThumbnailUrl = () => {
+    return getFileUrlMedia(product.primary_picture.thumbnail)
+}
+
+export const getAllProductThumbnailUrl = () => {
+    let medias = [getProductMainThumbnailUrl()]
+    for(const img in product.secondary_pictures) {
+        medias.push(getFileUrlMedia(img.thumbnail))
+    }
+    return medias
+}
+
 const product = {
     "category": "Sneaker Company",
     "name": "Fall Limited Edition Sneakers",
