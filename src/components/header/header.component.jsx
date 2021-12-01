@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { ReactComponent as IconCart } from '../../assets/icon-cart.svg'
 import { ReactComponent as IconDelete } from '../../assets/icon-delete.svg'
+import { ReactComponent as IconMenu } from '../../assets/icon-menu.svg'
+import { ReactComponent as IconClose } from '../../assets/icon-close.svg'
 import product from '../../data/product'
 import profileImg from '../../assets/image-avatar.png';
 import imgProductThumb from '../../assets/image-product-1-thumbnail.jpg';
 import './header.styles.scss';
 import '../custom-button/custom-button.styles.scss'
 
-const Header = () => {
+const Header = ({mobileMenu, setMobileMenu}) => {
     const itemCount = 5;
     const quantity = 3;
     const [hidden, setHidden] = React.useState(true);
@@ -66,8 +68,10 @@ const Header = () => {
 
     return (
         <header id="header" className="header">
-            <Link to="/">
-                <Logo className="header__logo" />
+            <IconMenu className="header__menu-mobile"/>
+            <IconClose className="header__menu-mobile__close"/>
+            <Link className="header__logo" to="/">
+                <Logo className="header__logo__img" />
             </Link>
             <nav className="header__nav">
                 <Link className="header__nav__item" to='/collections'>

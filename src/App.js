@@ -5,11 +5,13 @@ import ProductPage from './components/product-page/product-page.componant';
 
 import './App.scss'
 
+
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <ProductPage/>
+      {/* <div class="overlay" style="visibility: hidden;"></div> */}
     </div>
   );
 }
