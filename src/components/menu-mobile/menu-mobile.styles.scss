@@ -3,6 +3,7 @@
 .menu-mobile {
 
     &__open {
+        display: none;
         position: relative;
         cursor: pointer;
 
@@ -13,11 +14,11 @@
     }    
     
     &__close {
+        display: none;
         position: absolute;
         top: 2rem;
         left: 2rem;
         z-index: 11;
-        display: none;
         cursor: pointer;
         transition: all 0.4s;
 
