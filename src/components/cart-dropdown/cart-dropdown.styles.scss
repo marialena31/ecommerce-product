@@ -8,7 +8,7 @@
     background-color: $white;
     width: 320px;
     height: auto;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 5px 5px 30px $grayish-blue;
     text-align: center;
@@ -16,16 +16,20 @@
     grid-template-rows: 40px auto;
 
     @media only screen and (max-width: $bp-small) {
+        display:block;
+        font-size: 150%;
         top: 4.1rem;
-        right: 0%;
+        right: 0;
         width: 88vw;
         margin: auto;
     }
 
     &__header {
+        min-height: 40px;
         border-bottom: 2px solid $light-grayish-blue;
         font-weight: $font-weight-strong;
         text-align: left;
+        vertical-align: middle;
     }
 
     &__content {

@@ -9,12 +9,11 @@ import product from "../../data/product";
 import './product-details.styles.scss'
 
 const ProductDetails = ({quantity, setQuantity}) => {
-    const [qtySelected, setQtySelected] = React.useState(0)
+    const [qtySelected, setQtySelected] = React.useState(1)
 
     const addToCart = () => {
-        console.log(qtySelected)
-        console.log(quantity)
-        setQuantity(qtySelected)
+        setQuantity(Number(quantity) + Number(qtySelected))
+        setQtySelected(1)
     }
 
     return (

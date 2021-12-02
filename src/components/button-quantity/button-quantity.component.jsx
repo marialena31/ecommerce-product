@@ -7,11 +7,11 @@ import { ReactComponent as IconPlus } from '../../assets/icon-plus.svg'
 
 const ButtonQuantity = ({qtySelected, setQtySelected}) => {
     const increaseQuantity = () => {
-        setQtySelected(qtySelected + 1)
+        setQtySelected(Number(qtySelected) + 1)
     }
 
     const decreaseQuantity = () => {
-        (qtySelected > 0) && setQtySelected(qtySelected - 1) 
+        (qtySelected > 0) && setQtySelected(Number(qtySelected) - 1) 
     }
 
     return (
