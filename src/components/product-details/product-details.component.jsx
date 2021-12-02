@@ -2,13 +2,11 @@ import React from "react";
 
 import ButtonQuantity from "../button-quantity/button-quantity.component";
 import CustomButton from "../custom-button/custom-button.component";
-import  IconCartWhite from '../../assets/icon-cart-white.svg'
+import IconCartWhite from '../../assets/icon-cart-white.svg'
 
 import product from "../../data/product";
 
 import './product-details.styles.scss'
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-import CartIcon from "../cart-icon/cart-icon.component";
 
 const ProductDetails = ({quantity, setQuantity}) => {
     const [qtySelected, setQtySelected] = React.useState(0)

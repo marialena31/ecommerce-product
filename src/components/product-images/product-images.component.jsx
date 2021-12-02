@@ -1,8 +1,6 @@
 import React from "react";
 
-import GalleryImages from "../gallery-images/gallery-images.component";
-
-import  IconNext from '../../assets/icon-next.svg'
+import IconNext from '../../assets/icon-next.svg'
 import IconPrevious from '../../assets/icon-previous.svg'
 
 import {getAllProductThumbnailUrl, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
