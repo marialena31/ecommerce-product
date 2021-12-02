@@ -31,7 +31,7 @@ const ProductDetails = ({quantity, setQuantity}) => {
             <div className="product-details__base_price">{product.currency}{product.base_price}</div>
             <div className="product-details__actions">
                 <ButtonQuantity qtySelected={qtySelected} setQtySelected={setQtySelected}/>
-                <CustomButton title="Add to cart" img={IconCartWhite} onClick={addToCart}/>
+                <CustomButton title="Add to cart" img={IconCartWhite} handleClick={addToCart}/>
             </div>
         </div>
     )
