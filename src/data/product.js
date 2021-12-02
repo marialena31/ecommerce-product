@@ -14,9 +14,15 @@ export const getAllProductThumbnailUrl = () => {
     return medias;
 }
 
-export const getAllProductMediasUrl = () => {
-    let medias = product.secondary_pictures.map(img => getFileUrlMedia(img.thumbnail));
-    medias.unshift(getProductMainThumbnailUrl());
+export const getAllProductNormalUrl = () => {
+    let medias = product.secondary_pictures.map(img => getFileUrlMedia(img.normal));
+    medias.unshift(getProductMainImageUrl());
+    return medias;
+}
+
+export const getAllProductNormalFilename = () => {
+    let medias = product.secondary_pictures.map(img => (img.normal));
+    medias.unshift(product.primary_picture.normal);
     return medias;
 }
 

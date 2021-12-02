@@ -1,39 +1,41 @@
 import React from "react";
 
-import  IconNext from '../../assets/icon-next.svg'
-import IconPrevious from '../../assets/icon-previous.svg'
+import IconCloseWhite from '../../assets/icon-close-white.svg'
 import IconCloseOrange from '../../assets/icon-close-orange.svg'
 
-import {getAllProductThumbnailUrl, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
+import MiniImage from "../mini-image/mini-image.component";
+import MainImage from "../main-image/main-image.component";
+
+import {getAllProductThumbnailUrl, getAllProductNormalUrl, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
 import { getRandomKey, getFileUrlMedia } from "../../utils/utils";
+
 
 import './gallery-images.styles.scss'
 
-const GalleryImages = ({overlay, setOverlay, galleryHidden, setGalleryHidden}) => {
+const GalleryImages = ({overlay, setOverlay, galleryHidden, setGalleryHidden, handleClick, handleClickMain, handleClickPrev, handleClickNext, mainImageShow, setMainImageShow}) => {
     const closeGallery = () => {
         setOverlay(false)
         setGalleryHidden(true)
     }
     
-    const setAsMainImage = (event) => {
-        const img = event.target.src.substring(29);
-        document.getElementById("mainGalleryImage").setAttribute('src', getFileUrlMedia(getMainImageFromThumbnail(img)));
+    const toggleIconColor = (event) => {
+        const elt = event.target;
+        event.target.src.includes('icon-close-white') ? elt.setAttribute('src', IconCloseOrange) : elt.setAttribute('src', IconCloseWhite)
     }
 
     return (
         <div className="images-gallery">
-            <img src={IconCloseOrange} className="images__gallery__icon__close" alt="close gallery" onClick={closeGallery}/>
-            <div className="images-gallery__main">
-                <img src={IconPrevious} className="images-gallery__main__btn__prev" alt="previous product"/>
-                <img id="mainGalleryImage" className="images-gallery__main__img" src={getProductMainImageUrl()} alt="product"/>
-                <img src={IconNext} className="images-gallery__main__btn__next" alt="next product"/>
-            </div>
+            <img src={IconCloseWhite} className="images-gallery__icon__close" alt="close gallery" onClick={closeGallery} onMouseEnter={toggleIconColor} onMouseLeave={toggleIconColor}/>
+            <MainImage  
+                img={mainImageShow} 
+                id="mainGalleryImage" 
+                className="images-gallery" 
+                alt="product" 
+                handleClickPrev={handleClickPrev} 
+                handleClickNext={handleClickNext}
+            />
             <div className="images-gallery__mini">
-                {getAllProductThumbnailUrl().map(img => 
-                    (<div className="images-gallery__mini__item" key={getRandomKey(1,100)}>
-                        <img className="images-gallery__mini__item__img" src={img} alt="product" onClick={setAsMainImage}/>
-                    </div>)
-                )}
+                {getAllProductThumbnailUrl().map(img => (<MiniImage key={getRandomKey()} img={img} className="images-gallery__mini" alt="product" handleClick={handleClick}/>))}
             </div>
         </div>
     )
