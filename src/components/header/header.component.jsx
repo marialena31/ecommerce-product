@@ -10,13 +10,13 @@ import { ReactComponent as Logo } from '../../assets/logo.svg'
 
 import './header.styles.scss';
 
-const Header = () => {  
+const Header = ({quantity, setQuantity, overlay, setOverlay}) => {  
     const [hiddenCart, setHiddenCart] = React.useState(true);
     const [hiddenMenuMobile, setHiddenMenuMobile] = React.useState(true);
 
     return (
         <header id="header" className="header">
-            <MenuMobile hiddenMenuMobile={hiddenMenuMobile} setHiddenMenuMobile={setHiddenMenuMobile}/>
+            <MenuMobile hiddenMenuMobile={hiddenMenuMobile} setHiddenMenuMobile={setHiddenMenuMobile} overlay={overlay} setOverlay={setOverlay}/>
             <Link className="header__logo" to="/">
                 <Logo className="header__logo__img" />
             </Link>
@@ -38,8 +38,8 @@ const Header = () => {
                 </Link>
             </nav>
             <div className="header__right-box">
-                <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart}/>
-                { hiddenCart ? null :  <CartDropdown/> }
+                <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} quantity={quantity} setQuantity={setQuantity}/>
+                { hiddenCart ? null :  <CartDropdown quantity={quantity} setQuantity={setQuantity}/> }
                 <ProfileImage/> 
             </div>
         </header>

@@ -7,9 +7,18 @@ import  IconCartWhite from '../../assets/icon-cart-white.svg'
 import product from "../../data/product";
 
 import './product-details.styles.scss'
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import CartIcon from "../cart-icon/cart-icon.component";
 
-const ProductDetails = () => {
-    
+const ProductDetails = ({quantity, setQuantity}) => {
+    const [qtySelected, setQtySelected] = React.useState(0)
+
+    const addToCart = () => {
+        console.log(qtySelected)
+        console.log(quantity)
+        setQuantity(qtySelected)
+    }
+
     return (
         <div className="product-details">
             <div className="product-details__category">{product.category}</div>
@@ -23,8 +32,8 @@ const ProductDetails = () => {
             </div>
             <div className="product-details__base_price">{product.currency}{product.base_price}</div>
             <div className="product-details__actions">
-                <ButtonQuantity/>
-                <CustomButton title="Add to cart" img={IconCartWhite}/>
+                <ButtonQuantity qtySelected={qtySelected} setQtySelected={setQtySelected}/>
+                <CustomButton title="Add to cart" img={IconCartWhite} onClick={addToCart}/>
             </div>
         </div>
     )

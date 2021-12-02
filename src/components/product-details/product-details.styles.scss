@@ -158,12 +158,13 @@
 
         @media only screen and (max-width: $bp-medium) {
             width: 100%;
+            flex-direction: column;
             justify-content: center;
         }
 
-       & .btn__qty {
-           margin-right: 2rem;
-       }
+        & .btn__qty {
+            margin-right: 2rem;
+        }
     }
 }
 

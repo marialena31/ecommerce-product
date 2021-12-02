@@ -4,9 +4,7 @@ import { ReactComponent as IconCart } from '../../assets/icon-cart.svg'
 
 import './cart-icon.styles.scss'
 
-const CartIcon = ({hiddenCart, setHiddenCart}) => {
-    const itemCount = 0;
-
+const CartIcon = ({hiddenCart, setHiddenCart, quantity, setQuantity}) => {
     const toggleCartHidden = () => {
         setHiddenCart(!hiddenCart);
     }
@@ -14,7 +12,7 @@ const CartIcon = ({hiddenCart, setHiddenCart}) => {
     return (
         <div className="cart-icon__cta" onClick={toggleCartHidden}>
            <IconCart className="cart-icon" /> 
-            {itemCount ? <span className="item-count">{itemCount}</span> : null}
+            {quantity ? <span className="item-count">{quantity}</span> : null}
         </div>
     )
 }

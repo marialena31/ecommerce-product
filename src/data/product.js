@@ -14,6 +14,23 @@ export const getAllProductThumbnailUrl = () => {
     return medias;
 }
 
+export const getAllProductMediasUrl = () => {
+    let medias = product.secondary_pictures.map(img => getFileUrlMedia(img.thumbnail));
+    medias.unshift(getProductMainThumbnailUrl());
+    return medias;
+}
+
+export const getMainImageFromThumbnail = thumbFileName => {
+    let mainImageFileName = '';
+    if(product.primary_picture.thumbnail === thumbFileName) {
+        mainImageFileName = product.primary_picture.normal
+    } else {
+        let picture = product.secondary_pictures.filter(pict => pict.thumbnail === thumbFileName)
+        mainImageFileName = picture[0].normal;
+    }
+    return mainImageFileName;
+}
+
 const product = {
     "category": "Sneaker Company",
     "name": "Fall Limited Edition Sneakers",

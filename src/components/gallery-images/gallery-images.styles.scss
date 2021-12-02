@@ -1,0 +1,97 @@
+@import "../../sass/variables";
+
+.images-gallery {
+    position: relative;
+    height: 80vh;
+    width: 50vw;
+    margin: auto;
+    display: block;
+    z-index: 11;
+
+    &__icon__close {
+        position: absolute;
+        top:-10px;
+        right:-50%;
+        height: 25px;
+        width: 25px;
+        z-index: 11;
+        color: $primary-color;
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__img {
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+     
+        }
+
+        &__btn__prev, &__btn__next {
+            position: absolute;
+            background-color: $white;
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            padding: 1rem;
+            z-index: 12;
+            display: none;
+            cursor: pointer;
+
+        }
+
+        &__btn__prev {
+            left: 1.5rem;
+
+        }
+
+        &__btn__next {
+            right: 1.5rem;
+
+        }
+    }
+
+    &__mini {
+        display: flex;
+        width: 30vw;
+        justify-content: space-around;
+      
+
+        &__item {
+            // position: relative;
+            width: 8%;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s;
+
+            &:active {
+                border: 3px solid $primary-color;
+            }
+
+            &__img {
+                height: 100%;
+                width: 100%;
+
+                &:hover,
+                &:active {
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+}
+.images__gallery__icon__close {
+    position: absolute;
+    top:-40px;
+        right:320px;
+    height: 25px;
+    width: 25px;
+    z-index: 11;
+    color: $primary-color;
+    cursor: pointer;
+}

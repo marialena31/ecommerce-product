@@ -29,10 +29,12 @@
     }
 
     &__content {
+        min-height: 160px;
         display: flex;
         flex-direction: column;
         font-weight: $font-weight-strong;
         color: $dark-grayish-blue;
         align-self: center;
+        justify-content: center;
     }
 }

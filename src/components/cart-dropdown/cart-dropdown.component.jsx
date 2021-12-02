@@ -5,14 +5,13 @@ import CustomButton from "../custom-button/custom-button.component";
 
 import './cart-dropdown.styles.scss'
 
-const CartDropdown = () => {
-    const itemCount = 5;
+const CartDropdown = ({quantity, setQuantity}) => {
     return(
         <div className="cart-dropdown">
             <div className="cart-dropdown__header">Cart</div>
-           {itemCount ?
+           {quantity ?
            <>
-            <CartItem/> 
+            <CartItem quantity={quantity} setQuantity={setQuantity}/> 
             <CustomButton title="Checkout" />
            </> :
            <div className="cart-dropdown__content">Your cart is empty.</div> 

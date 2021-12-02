@@ -5,13 +5,15 @@ import { ReactComponent as IconClose } from '../../assets/icon-close.svg'
 
 import './menu-mobile.styles.scss'
 
-const MenuMobile = ({hiddenMenuMobile, setHiddenMenuMobile}) => {
+const MenuMobile = ({hiddenMenuMobile, setHiddenMenuMobile, overlay, setOverlay}) => {
     const openMenuMobile = () => {
+        setOverlay(true)
         setHiddenMenuMobile(false)
         document.getElementById('menu').style.display = 'flex';
     }
 
     const closeMenuMobile = () => {
+        setOverlay(false)
         setHiddenMenuMobile(true)
         document.getElementById('menu').style.display = 'none';
     }
