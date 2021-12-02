@@ -4,8 +4,8 @@ import ProductImages from "../product-images/product-images.component";
 import ProductDetails from "../product-details/product-details.component";
 import GalleryImages from "../gallery-images/gallery-images.component";
 
-import {getAllProductThumbnailUrl, getAllProductNormalFilename, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
-import { getRandomKey, getFileUrlMedia } from "../../utils/utils";
+import {getAllProductNormalFilename, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
+import { getFileUrlMedia } from "../../utils/utils";
 
 import './product-page.styles.scss'
 

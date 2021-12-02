@@ -2,8 +2,8 @@ import React from "react";
 
 import MiniImage from "../mini-image/mini-image.component";
 import MainImage from "../main-image/main-image.component";
-import {getAllProductThumbnailUrl, getAllProductNormalUrl, getProductMainImageUrl, getMainImageFromThumbnail} from "../../data/product";
-import { getRandomKey, getFileUrlMedia } from "../../utils/utils";
+import {getAllProductThumbnailUrl} from "../../data/product";
+import { getRandomKey } from "../../utils/utils";
 
 import './product-images.styles.scss'
 
