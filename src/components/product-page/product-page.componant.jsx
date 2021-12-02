@@ -14,7 +14,7 @@ const ProductPage = ({quantity, setQuantity, overlay, setOverlay}) => {
     const [mainImageShow, setMainImageShow] = React.useState(getProductMainImageUrl());
 
     const setAsMainImage = (event) => {
-        const img = event.target.src.substring(29);
+        const img = event.target.src.substring(event.target.src.lastIndexOf('/')+1);
         const newMainImageUrl = getFileUrlMedia(getMainImageFromThumbnail(img));
         document.getElementById("mainImage").setAttribute('src', newMainImageUrl);
         setMainImageShow(newMainImageUrl)
