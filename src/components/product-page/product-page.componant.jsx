@@ -21,8 +21,10 @@ const ProductPage = ({quantity, setQuantity, overlay, setOverlay}) => {
     }
 
     const displayGallery = () => {
-        setOverlay(true)
-        setGalleryHidden(false)
+        if(window.innerWidth >= 900) {
+            setOverlay(true)
+            setGalleryHidden(false)
+        }  
     }
 
     const getCurrentImage = () => {
